@@ -1,6 +1,6 @@
 stages:
   - lint
-  - prettier
+  # - prettier
 
 eslint:
   stage: lint
@@ -14,7 +14,8 @@ eslint:
     - npm run lint
 
 prettier:
-  stage: prettier
+  # stage: prettier
+  stage: lint
   variables:
     NODE_VERSION: 14.17.0
   script:
