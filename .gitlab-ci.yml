@@ -11,3 +11,8 @@ eslint:
     - eval "[ -f .nvmrc ] && nvm install"
     - npm install
     - npm run lint
+
+prettier:
+  stage: prettier
+  script:
+    - npm run check:format
