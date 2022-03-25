@@ -14,7 +14,9 @@
     "db:truncate": "bin/truncate.js",
     "docker:db:truncate": "docker-compose exec node npm run db:truncate",
     "docker:test": "docker-compose -f docker-compose.yml -f docker-compose.test.yml run node npm run test",
-    "docker:start": "docker-compose -f docker-compose.yml -f docker-compose.development.yml up"
+    "docker:start": "docker-compose -f docker-compose.yml -f docker-compose.development.yml up",
+    "prettier": "prettier --check .",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@hapi/boom": "9.1.2",
@@ -53,6 +55,7 @@
     "coveralls": "3.1.0",
     "eslint": "7.26.0",
     "eslint-plugin-jest": "24.3.6",
+    "husky": "7.0.4",
     "jest": "26.6.3",
     "moment": "2.29.1",
     "nodemon": "2.0.7",
