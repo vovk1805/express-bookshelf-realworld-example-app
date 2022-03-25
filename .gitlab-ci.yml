@@ -1,5 +1,6 @@
 stages:
   - lint
+  - prettier
 
 eslint:
   stage: lint
@@ -14,5 +15,11 @@ eslint:
 
 prettier:
   stage: prettier
+  variables:
+    NODE_VERSION: 14.17.0
   script:
+    - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+    - export NVM_DIR="$HOME/.nvm" && . "$NVM_DIR/nvm.sh" --no-use
+    - eval "[ -f .nvmrc ] && nvm install"
+    - npm install
     - npm run check:format
