@@ -44,5 +44,6 @@ deploy:
     - rsync -a --progress --human-readable --delete
       --exclude-from '.gitignore'
       --exclude ./.gitignore
+      --exclude ./.npm
       --exclude ./.git
       . deploy@139.177.176.70:~/realworld
