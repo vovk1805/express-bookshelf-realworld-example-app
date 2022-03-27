@@ -3,8 +3,6 @@ name: Deploy
 on:
   push:
     branches: [main]
-
-  # специальное событие, которое происходит при ручном вызове workflow
   workflow_dispatch:
 
 jobs:
