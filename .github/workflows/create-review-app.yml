@@ -23,10 +23,10 @@ jobs:
       - name: Copy build to server
         run: |
           rsync -a -r --progress --human-readable --delete \
-          --exclude-from '.gitignore' \
-          --include-from '.deploylist' \
-          --exclude 'public' \
-          --exclude 'ecosystem.config.js' \
+          --exclude-from './.gitignore' \
+          --include-from './.deploylist' \
+          --exclude './public' \
+          --exclude './ecosystem.config.js' \
           . ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:~/app/${{ github.head_ref }}/
         env:
           SSH_HOST: ${{ secrets.SSH_HOST }}
